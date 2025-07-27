@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="fevicon.svg">
+  <title>FitFound | Links</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0E3A62;
+      --secondary: #3B67F6;
+      --light-blue: #A5CCF7;
+      --background: #EDF9FF;
+      --text: #1a1a1a;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar img {
+      height: 36px;
+    }
+
+    .container {
+      background: white;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.25rem;
+      color: var(--primary);
+    }
+
+    p.bio {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .link-button {
+      display: block;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 14px 24px;
+      border-radius: 12px;
+      margin: 10px auto;
+      max-width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .link-button:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .linkedin-box {
+      background: var(--light-blue);
+      padding: 1rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+
+    .linkedin-box h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .linkedin-avatars {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      
+    }
+
+    .linkedin-avatars img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: white;
+      cursor: pointer;
+      border: 2px solid var(--primary);
+      transition: transform 0.3s;
+    }
+
+    .linkedin-avatars img:hover {
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        padding: 1.5rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      .link-button {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="logo.svg" alt="Logo" />
+  </div>
+
+  <div class="container">
+    <h1>FitFound</h1>
+    <p class="bio">Connecting Candidates wih Employers</p>
+    <h2>All Links at one place</h2>
+    <br>
+    <div class="links" id="links-container"></div>
+
+    <div class="linkedin-box">
+      <h3>💼 LinkedIn</h3>
+      <div class="linkedin-avatars">
+        <img src="member1.png" alt="Member 1" onclick="window.open('https://www.linkedin.com/in/sukhbir-singh-482539191/', '_blank')">
+        <img src="member2.png" alt="Member 2" onclick="window.open('https://www.linkedin.com/in/vipul-juneja-512274122/', '_blank')">
+        <img src="member3.png" alt="Member 3" onclick="window.open('https://www.linkedin.com/in/hitin-sachdeva-574670196', '_blank')">
+        <img src="member4.png" alt="Member 4" onclick="window.open('https://www.linkedin.com/in/sindy-vanessa-montano', '_blank')">
+        <img src="member5.png" alt="Member 5" onclick="window.open('https://www.linkedin.com/in/shubham-maini', '_blank')">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const links = [
+    //   { label: "🌐 Visit FitFound", url: "https://fitfound.ca" },
+      { label: "📩 Email Us", url: "mailto:fitfound2025@outlook.com" },
+      { label: "📄 FitFound Prospective", url: "https://drive.google.com/drive/folders/1r33pVJzY5Ey2TyJz5B1LvZusSJNRCPIQ?usp=sharing" }
+    ];
+
+    const container = document.getElementById('links-container');
+    links.forEach(link => {
+      const a = document.createElement('a');
+      a.href = link.url;
+      a.className = 'link-button';
+      a.target = '_blank';
+      a.textContent = link.label;
+      container.appendChild(a);
+    });
+  </script>
+</body>
+</html>
